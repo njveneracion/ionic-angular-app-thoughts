@@ -1,0 +1,242 @@
+<ion-header> <app-header></app-header></ion-header>
+
+<ion-menu contentId="sideNavigation">
+  <ion-header>
+    <ion-toolbar class="menu-header-toolbar" color="dark">
+      <div class="avatar">
+        <ion-avatar>
+          <ion-img src="../../assets/icon-tots.png"></ion-img>
+        </ion-avatar>
+      </div>
+
+      <div class="info">
+        <ion-row>
+          <ion-col>
+            <ion-card-title class="title"> {{fullName}} </ion-card-title>
+            <ion-card-subtitle class="subtitle">
+              &#64;{{username}}
+            </ion-card-subtitle>
+          </ion-col>
+          <ion-col size="2">
+            <ion-icon
+              name="qr-code-outline"
+              size="large"
+              (click)="presentToast()"
+            ></ion-icon>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-menu-toggle>
+      <div class="menu-list">
+        <ion-list lines="none">
+          <ion-item routerLink="/news">
+            <ion-icon
+              name="newspaper-outline"
+              slot="start"
+              size="large"
+            ></ion-icon>
+            <h4>News</h4>
+          </ion-item>
+
+          <ion-item routerLink="/about-us">
+            <ion-icon
+              name="information-circle-outline"
+              slot="start"
+              size="large"
+            ></ion-icon>
+            <h4>About Us</h4>
+          </ion-item>
+
+          <ion-item routerLink="/privacy-policy">
+            <ion-icon name="key-outline" slot="start" size="large"></ion-icon>
+            <h4>Privacy Policy</h4>
+          </ion-item>
+
+          <ion-item routerLink="/terms-condition">
+            <ion-icon
+              name="document-text-outline"
+              slot="start"
+              size="large"
+            ></ion-icon>
+            <h4>Terms & Conditions</h4>
+          </ion-item>
+
+          <ion-item routerLink="/settings">
+            <ion-icon
+              name="settings-outline"
+              slot="start"
+              size="large"
+            ></ion-icon>
+            <h4>Settings</h4>
+          </ion-item>
+
+          <ion-item routerLink="/login">
+            <ion-icon
+              name="log-out-outline"
+              slot="start"
+              size="large"
+            ></ion-icon>
+            <h4>Log out</h4>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-menu-toggle>
+  </ion-content>
+
+  <ion-item-divider></ion-item-divider>
+
+  <div class="menu-socials">
+    <h1 class="ion-margin">Socials</h1>
+    <ion-grid class="ion-margin-top">
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <a href="https://github.com/ionic-team/ionic-framework">
+            <ion-icon
+              name="logo-github"
+              size="large"
+              color="warning"
+            ></ion-icon>
+          </a>
+        </ion-col>
+        <ion-col class="ion-text-center">
+          <a href="https://twitter.com/Ionicframework">
+            <ion-icon
+              name="logo-twitter"
+              size="large"
+              color="warning"
+            ></ion-icon>
+          </a>
+        </ion-col>
+        <ion-col class="ion-text-center">
+          <a href="https://www.youtube.com/@IonicFramework">
+            <ion-icon
+              name="logo-youtube"
+              size="large"
+              color="warning"
+            ></ion-icon>
+          </a>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="version">
+    <ion-label>Version 0.0.1</ion-label>
+  </div>
+</ion-menu>
+
+<ion-content id="sideNavigation">
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button color="dark">
+      <ion-icon name="add-outline" color="warning"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button id="open-modal" color="dark">
+        <ion-icon name="create-outline" color="warning"></ion-icon>
+        <ion-modal
+          trigger="open-modal"
+          [initialBreakpoint]="1"
+          [breakpoints]="[0, 1]"
+        >
+          <ng-template>
+            <ion-header>
+              <ion-toolbar color="dark">
+                <ion-title color="warning">Create a post</ion-title>
+                <ion-icon
+                  name="alert-circle-outline"
+                  slot="end"
+                  size="large"
+                  class="ion-margin"
+                  color="warning"
+                  id="alert"
+                >
+                  <ion-alert
+                    trigger="alert"
+                    message="Please refrain from posting confidential or sensitive information on the Thoughts app. Ensure that your shared thoughts and expressions do not compromise your privacy or the privacy of others. Exercise discretion and be mindful of the public nature of this platform to maintain a safe and respectful environment for all users."
+                    [buttons]="alertButtons"
+                  ></ion-alert
+                ></ion-icon>
+              </ion-toolbar>
+            </ion-header>
+
+            <div class="block">
+              <ion-card class="card-content">
+                <form [formGroup]="dataForm">
+                  <ion-item fill="outline" lines="none">
+                    <ion-input
+                      type="text"
+                      label="Name (optional):"
+                      labelPlacement="floating"
+                      placeholder="ex. goku"
+                      name="name"
+                      formControlName="input1"
+                    ></ion-input>
+                  </ion-item>
+                  <br />
+                  <ion-item fill="outline" lines="none">
+                    <ion-textarea
+                      rows="7"
+                      label="Thoughts: "
+                      labelPlacement="floating"
+                      placeholder="your thoughts matter here"
+                      name="textArea"
+                      formControlName="input2"
+                      required
+                    ></ion-textarea>
+                  </ion-item>
+                  <ion-button
+                    id="present-alert"
+                    type="submit"
+                    expand="full"
+                    color="warning"
+                    (click)="saveFormData()"
+                    shape="round"
+                    >Post
+                  </ion-button>
+                </form>
+              </ion-card>
+            </div>
+          </ng-template>
+        </ion-modal>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <ion-card *ngFor="let item of savedData" color="warning">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="10">
+          <ion-card-header>
+            <ion-card-title> {{item.input1}} </ion-card-title>
+            <ion-card-subtitle>
+              {{item.input4}}
+              <span>{{item.input3}}</span>
+            </ion-card-subtitle>
+          </ion-card-header>
+        </ion-col>
+
+        <ion-col size="2">
+          <ion-icon
+            name="trash-outline"
+            size="large"
+            class="ion-margin"
+            (click)="confirmDelete(item)"
+          >
+          </ion-icon>
+        </ion-col>
+      </ion-row>
+
+      <ion-item-divider color="warning"></ion-item-divider>
+
+      <ion-row>
+        <ion-col>
+          <ion-card-content>{{item.input2}}</ion-card-content>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

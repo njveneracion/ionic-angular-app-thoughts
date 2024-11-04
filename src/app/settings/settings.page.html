@@ -1,0 +1,124 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title color="warning">Settings</ion-title>
+    <ion-icon
+      class="header-icon"
+      name="chevron-back-outline"
+      size="large"
+      routerLink="/home"
+      slot="start"
+    ></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card-content color="dark">
+    <ion-item-group>
+      <ion-label class="text">{{subAccount}}</ion-label>
+      <ion-list>
+        <ion-item class="ion-activatable ripple-parent" lines="inset">
+          <ion-ripple-effect></ion-ripple-effect>
+          <ion-label>
+            <h3>+63 {{contactNum}}</h3>
+            <ion-card-subtitle color="medium"
+              >Tap to change phone number</ion-card-subtitle
+            >
+          </ion-label>
+        </ion-item>
+        <ion-item class="ion-activatable ripple-parent" lines="inset">
+          <ion-ripple-effect></ion-ripple-effect>
+          <ion-label>
+            <h3>&#64;{{username}}</h3>
+            <ion-card-subtitle color="medium">Username</ion-card-subtitle>
+          </ion-label>
+        </ion-item>
+        <ion-item
+          class="ion-activatable ripple-parent"
+          (click)="presentToast()"
+          lines="inset"
+        >
+          <ion-ripple-effect></ion-ripple-effect>
+          <ion-label>
+            <h3>Bio</h3>
+            <ion-card-subtitle color="medium"
+              >Add a few words about yourself</ion-card-subtitle
+            >
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-item-group>
+  </ion-card-content>
+
+  <div class="colored-line"></div>
+
+  <ion-card-content>
+    <ion-item-group>
+      <ion-label class="text">{{subTitle}}</ion-label>
+      <ion-item class="ion-activatable ripple-parent" (click)="presentToast()"
+        ><ion-ripple-effect></ion-ripple-effect
+        ><ion-icon name="chatbubble-outline" slot="start"></ion-icon>Chat
+        Settings</ion-item
+      >
+      <ion-item class="ion-activatable ripple-parent" (click)="presentToast()"
+        ><ion-ripple-effect></ion-ripple-effect
+        ><ion-icon name="lock-closed-outline" slot="start"></ion-icon>Privacy
+        and Security</ion-item
+      >
+      <ion-item class="ion-activatable ripple-parent" (click)="presentToast()"
+        ><ion-ripple-effect></ion-ripple-effect
+        ><ion-icon name="notifications-outline" slot="start"></ion-icon
+        >Notification and Sounds</ion-item
+      >
+      <ion-item class="ion-activatable ripple-parent" (click)="presentToast()"
+        ><ion-ripple-effect></ion-ripple-effect
+        ><ion-icon name="pie-chart-outline" slot="start"></ion-icon>Data and
+        Storage</ion-item
+      >
+      <ion-item class="ion-activatable ripple-parent" (click)="presentToast()"
+        ><ion-ripple-effect></ion-ripple-effect
+        ><ion-icon name="battery-dead-outline" slot="start"></ion-icon>Power
+        Saving</ion-item
+      >
+      <ion-item class="ion-activatable ripple-parent" (click)="presentToast()"
+        ><ion-ripple-effect></ion-ripple-effect
+        ><ion-icon name="folder-outline" slot="start"></ion-icon>Chat
+        Folders</ion-item
+      >
+      <ion-item class="ion-activatable ripple-parent" (click)="presentToast()"
+        ><ion-ripple-effect></ion-ripple-effect
+        ><ion-icon name="laptop-outline" slot="start"></ion-icon
+        >Devices</ion-item
+      >
+      <ion-item
+        class="ion-activatable ripple-parent"
+        (click)="presentToast()"
+        lines="none"
+        ><ion-ripple-effect></ion-ripple-effect
+        ><ion-icon name="globe-outline" slot="start"></ion-icon
+        >Language</ion-item
+      >
+    </ion-item-group>
+  </ion-card-content>
+
+  <div class="colored-line"></div>
+
+  <ion-card-content>
+    <ion-item-group>
+      <ion-label class="text">{{subTitleHelp}}</ion-label>
+      <ion-item class="ion-activatable ripple-parent" (click)="presentToast()"
+        ><ion-ripple-effect></ion-ripple-effect
+        ><ion-icon name="chatbubble-ellipses-outline" slot="start"></ion-icon
+        >Ask a Question</ion-item
+      >
+      <ion-item class="ion-activatable ripple-parent" (click)="presentToast()"
+        ><ion-ripple-effect></ion-ripple-effect
+        ><ion-icon name="help-circle-outline" slot="start"></ion-icon>Thoughts
+        FAQ</ion-item
+      >
+    </ion-item-group>
+  </ion-card-content>
+
+  <div class="foot">
+    <ion-label class="footer">All Right Reserve &#64; BSIT 3A</ion-label>
+  </div>
+</ion-content>

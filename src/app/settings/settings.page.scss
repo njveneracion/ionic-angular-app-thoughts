@@ -1,0 +1,53 @@
+.foot{
+    text-align: center;
+    font-size: 10px;
+    margin: 5%;
+  }
+  
+  .ripple-parent {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .text{
+    color: rgb(210, 154, 14);
+    font-size: 15px;
+  }
+
+  ion-label{
+    margin: 5%;
+  }
+
+  ion-content{
+    font-family: Tahoma;
+  }
+
+.colored-line {
+  height: 1px; /* You can adjust the height as needed */
+  width: 90%; /* Set the width to 100% for a horizontal line */
+  background-color:  #c4c4c4; /* Replace 'yourColor' with the desired color code */
+  margin-left: 5%;
+}
+
+.content-header{
+  margin: 5%;
+  color: #222428;
+}
+
+.footer{
+  font-size: medium;
+  color: gray;
+  font-family: Tahoma;
+}
+
+ion-toolbar{
+  padding: 15px;
+}
+
+.header-icon{
+  margin-top: 15%;
+}
+
+ion-title{
+  margin-top: 17%;
+}

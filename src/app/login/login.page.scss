@@ -1,0 +1,60 @@
+
+ion-img{
+  height:auto;
+  width: 70%;
+}
+
+.logo{
+display: flex;
+justify-content: center;
+margin-top: 10%;
+
+}
+
+ion-text{
+  font-family: Tahoma;
+  text-align: center;
+}
+
+h1{
+ 
+  font-weight: 500;
+}
+
+h6{
+  color: gray;
+}
+
+.login-input{
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.login-button{
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+}
+
+.signup-link{
+  text-align: center;
+}
+
+ion-card{
+  padding: 30px;
+}
+
+ion-item {
+  --border-color: #2e2d2d; /* Set your desired outline color */
+}
+
+
+
+.forgot-pass{
+  font-family: Tahoma;
+  text-align: center;
+  color: #3880ff;
+  font-size:  0.875rem;
+}
+

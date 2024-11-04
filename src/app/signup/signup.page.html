@@ -1,0 +1,262 @@
+<ion-content>
+  <div class="container">
+    <ion-card>
+      <div class="content-header">
+        <h3>Create an account</h3>
+      </div>
+      <ion-list>
+        <ion-item>
+          <ion-input
+            [(ngModel)]="fullName"
+            name="fullName"
+            type="text"
+            labelPlacement="floating"
+            label="Full Name: "
+            placeholder="ex. Juan Dela Cruz"
+            required
+          ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            [(ngModel)]="contactNum"
+            type="tel"
+            inputmode="numeric"
+            pattern="[0-9]"
+            maxlength="10"
+            (keypress)="validateInput($event)"
+            label="Contact Number: (+63) "
+            placeholder="ex. 9123456789"
+            required
+            labelPlacement="floating"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            [(ngModel)]="username"
+            name="username"
+            type="text"
+            labelPlacement="floating"
+            label="Username"
+            required
+          ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            [(ngModel)]="password"
+            name="password"
+            type="password"
+            labelPlacement="floating"
+            label="Password"
+            required
+          ></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <div>
+        <ion-item lines="none">
+          <ion-checkbox [(ngModel)]="termsAccepted"></ion-checkbox>
+          <ion-label>
+            <a id="open-modal" class="toc">Accept Terms and Conditions</a>
+          </ion-label>
+        </ion-item>
+        <ion-modal trigger="open-modal">
+          <ng-template>
+            <!-- terms and condition content -->
+            <ion-content>
+              <ion-card>
+                <ion-card-content>
+                  <h1></h1>
+                  <h2 class="ion-text-center">
+                    Thoughts App Terms and Conditions
+                  </h2>
+                  <br />
+                  <p>
+                    Welcome to Thoughts! These terms and conditions ("Terms")
+                    govern your use of the Thoughts mobile application ("App")
+                    provided by Thoughts. By accessing or using the App, you
+                    agree to comply with and be bound by these Terms. If you do
+                    not agree with these Terms, please do not use the App.
+                  </p>
+
+                  <br />
+
+                  <h3>1. User Content <br />1.1. Responsibility:</h3>
+                  <p>
+                    You are solely responsible for the content you post on
+                    Thoughts.
+                  </p>
+                  <p>
+                    Do not share content that violates the law, infringes on the
+                    rights of others, or is harmful, threatening, or
+                    discriminatory.
+                  </p>
+
+                  <br />
+
+                  <h3>1.2. Moderation:</h3>
+                  <p>
+                    We reserve the right to moderate and remove content that
+                    violates these Terms.
+                  </p>
+                  <p>
+                    Users who repeatedly violate these Terms may be suspended or
+                    banned from using the App.
+                  </p>
+
+                  <br />
+
+                  <h3>
+                    2. Privacy 2.1. <br />
+                    Personal Information:
+                  </h3>
+                  <p>
+                    We collect and process personal information in accordance
+                    with our Privacy Policy.
+                  </p>
+                  <p>
+                    By using the App, you consent to the collection and use of
+                    your information as outlined in the Privacy Policy.
+                  </p>
+
+                  <br />
+
+                  <h3>3. Code of Conduct <br />3.1. Respect:</h3>
+                  <p>Treat other users with respect and courtesy.</p>
+                  <p>
+                    Do not engage in harassment, bullying, or any form of
+                    harmful behavior.
+                  </p>
+
+                  <br />
+
+                  <h3>3.2. Lawful Use:</h3>
+                  <p>
+                    Do not use the App for any illegal or unauthorized purpose.
+                  </p>
+                  <p>Comply with all applicable laws and regulations.</p>
+
+                  <br />
+
+                  <h3>4. Intellectual Property <br />4.1. Ownership:</h3>
+                  <p>
+                    The content provided by Thoughts, including but not limited
+                    to text, graphics, logos, and images, is the property of
+                    Thoughts.
+                  </p>
+                  <p>
+                    Users may not reproduce, distribute, or create derivative
+                    works without permission.
+                  </p>
+
+                  <br />
+
+                  <h3>5. Disclaimer <br />5.1. Use at Your Own Risk:</h3>
+                  <p>
+                    Use the App at your own risk. We do not guarantee the
+                    accuracy, completeness, or reliability of content posted by
+                    users.
+                  </p>
+
+                  <br />
+
+                  <h3>6. Changes to Terms <br />6.1. Updates:</h3>
+                  <p>
+                    We reserve the right to update these Terms at any time
+                    without notice.
+                  </p>
+                  <p>
+                    Continued use of the App after changes constitutes
+                    acceptance of the updated Terms.
+                  </p>
+
+                  <br />
+
+                  <h3>
+                    7. Termination <br />
+                    7.1. Termination:
+                  </h3>
+
+                  <p>
+                    We reserve the right to terminate or suspend your account
+                    for violation of these Terms.
+                  </p>
+
+                  <br />
+
+                  <h3>
+                    8. Contact Information <br />
+                    8.1. Contact:
+                  </h3>
+
+                  <p>
+                    For questions or concerns about these Terms, contact us at
+                    <a href="https://mail.google.com/mail/u/0/#inbox"
+                      >njvenxxviii&#64;gmail.com</a
+                    >.
+                  </p>
+
+                  <br />
+
+                  <p>
+                    By using the Thoughts App, you acknowledge that you have
+                    read, understood, and agreed to these Terms. Thank you for
+                    being a part of the Thoughts community!
+                  </p>
+
+                  <br /><br />
+
+                  <p>Thoughts</p>
+                  <p>+63 9202917548</p>
+                  <p>December 06, 2023 7:00 PM</p>
+                  <br />
+
+                  <ion-button
+                    color="warning"
+                    shape="round"
+                    (click)="dismissModal()"
+                    >Go back</ion-button
+                  >
+                </ion-card-content>
+              </ion-card>
+            </ion-content>
+          </ng-template>
+        </ion-modal>
+      </div>
+
+      <div>
+        <ion-card>
+          <ion-item lines="none">
+            <ion-icon
+              name="notifications-sharp"
+              class="ion-margin"
+              color="danger"
+            ></ion-icon>
+            <ion-label color="danger">Reminder to all users!</ion-label>
+          </ion-item>
+          <ion-card-content>
+            You can create only one account since this is only an offline
+            application, so please make sure to remember the information you
+            input in the forms. And also every new account, the saved data from
+            last users will be deleted.
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <div class="button">
+        <ion-button
+          color="warning"
+          fill="solid"
+          (click)="signup()"
+          shape="round"
+          [disabled]="!termsAccepted"
+          >Signup</ion-button
+        >
+      </div>
+
+      <p>Go back to <a routerLink="/login">Login</a></p>
+    </ion-card>
+  </div>
+</ion-content>

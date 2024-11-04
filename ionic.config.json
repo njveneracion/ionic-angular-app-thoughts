@@ -1,0 +1,8 @@
+{
+  "name": "CaseStudyITPT02",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
